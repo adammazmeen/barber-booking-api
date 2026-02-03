@@ -14,6 +14,10 @@ const pool = new Pool({
   ssl: { require: true },
 });
 
+app.get("/", (req, res) => {
+  res.send("Barber Booking API is running");
+});
+
 app.get("/bookings", async (req, res) => {
   const client = await pool.connect();
   try {
